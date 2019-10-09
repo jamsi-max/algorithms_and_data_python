@@ -3,16 +3,16 @@
 # Количество вводимых чисел и цифра, которую необходимо посчитать, задаются вводом с клавиатуры
 
 num = int(input('Сколько чисел вы хотите ввести: '))
-find_num = int(input('Какую цифру от 0 до 9 будем искать: '))
+find_num = input('Какую цифру от 0 до 9 будем искать: ')
 
-result, count, step = '', 0, 1
+count, step = 0, 1
 PASS = 0
 
 while step <= num:
-    result = result + input(f'введите число №{step}: ')
+    a = int(input(f'Введите число №{step}: '))
+    for i in str(a):
+        if i == find_num:
+            count += 1
     step += 1
-
-for i in result:
-    count +=1 if int(i) == find_num else PASS
 
 print(f'Цифра {find_num} встречается в введёных числах {count} раз!')

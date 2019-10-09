@@ -11,6 +11,7 @@ itter, val, val_sum = 1, 0, 0
 
 while itter:
     itter = int(input('Введите натуральное число: '))
-    if sum(itter) > val_sum:
-        val_sum, val = sum(itter), itter
+    res = sum(itter)
+    if res > val_sum:
+        val_sum, val = res, itter
 print(f'Наибольшая сумма цифр {val_sum} у числа {val}.')

@@ -9,11 +9,10 @@ x = random.randint(0,100)
 n=10
 while n:
     num = int(input('Введите число: '))
+    n -= 1
     if num < x:
-        n -= 1
         print(f'Больше! Осталось {n} попыток')
     elif num > x:
-        n -= 1
         print(f'Меньше! Осталось {n} попыток')
     else:
         print(f'Победа! Загаданное число {x}')
