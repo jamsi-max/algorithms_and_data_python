@@ -2,21 +2,21 @@
 # Найти максимальный элемент среди минимальных элементов столбцов матрицы.
 import random
 
-LINE = 4
-COLUMN = 5
+LINE = 5
+COLUMN = 4
 
-matrix = [[random.randint(-10,10) for x in range(LINE)] for y in range(COLUMN)]
+matrix = [[random.randint(-10,10) for x in range(COLUMN)] for y in range(LINE)]
 
 print(*matrix, sep='\n')
 print('*'*90)
 
 column_result=[]
 
-for line in range(0, LINE):
-    spam = matrix[0][line]
-    for column in range(0,COLUMN):
-        if matrix[column][line] < spam:
-             spam = matrix[column][line]
+for column in range(0, COLUMN):
+    spam = matrix[0][column]
+    for line in range(0,LINE):
+        if matrix[line][column] < spam:
+             spam = matrix[line][column]
     column_result.append(spam)
 
 max_number = column_result[0]

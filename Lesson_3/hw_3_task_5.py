@@ -18,9 +18,11 @@ for i in ls:
     if i < elm:
         elm = i
 
-for pos_spam, spam in enumerate(ls):
-    if elm < spam < 0:
-        elm = spam
-        pos = pos_spam
-
-print(f'Максимальный отрицательный элемент равен {elm} находится в массиве на {pos} месте.')
+if elm < 0:
+    for pos_spam, spam in enumerate(ls):
+        if elm < spam < 0:
+            elm = spam
+            pos = pos_spam
+    print(f'Максимальный отрицательный элемент равен {elm} находится в массиве на {pos} месте.')
+else:
+    print('В массиве отсутсвуют отрицательные числа')
